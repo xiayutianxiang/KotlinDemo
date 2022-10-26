@@ -11,12 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinDemo">
-        <activity android:name="com.example.FilePersistenceActivity">
+        <activity android:name="com.example.database.CreateDbActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="com.example.FilePersistenceActivity">
+
         </activity>
 
         <receiver
@@ -36,9 +39,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".BroadcastActivity">
-
-        </activity>
+        <activity android:name=".BroadcastActivity"></activity>
         <activity android:name=".FragmentActivity" />
         <activity android:name=".SecondActivity">
             <intent-filter>
