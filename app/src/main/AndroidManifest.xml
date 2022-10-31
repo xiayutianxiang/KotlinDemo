@@ -3,6 +3,7 @@
     package="com.example.kotlindemo">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <application
         android:allowBackup="true"
@@ -12,13 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinDemo">
         <activity android:name="com.example.database.CreateDbActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name="com.example.FilePersistenceActivity">
 
         </activity>
 
@@ -39,13 +33,20 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".BroadcastActivity"></activity>
+        <activity android:name=".BroadcastActivity" />
         <activity android:name=".FragmentActivity" />
         <activity android:name=".SecondActivity">
             <intent-filter>
                 <action android:name="com.example.kotlindemo.ACTION_START" />
 
                 <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.contentprovider.ContentActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
