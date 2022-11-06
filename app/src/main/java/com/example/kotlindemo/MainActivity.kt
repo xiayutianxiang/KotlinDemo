@@ -40,8 +40,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initListView() {
-        val adapter = ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, ListViewData.data)
+        val adapter = ArrayAdapter<String>(
+            this,
+            android.R.layout.simple_list_item_1, ListViewData.data
+        )
         binding.listView.adapter = adapter
     }
 
