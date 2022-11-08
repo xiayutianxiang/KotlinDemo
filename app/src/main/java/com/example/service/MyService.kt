@@ -4,8 +4,7 @@ import android.app.Service
 import android.content.Intent
 import android.os.Binder
 import android.os.IBinder
-import android.util.Log
-import com.example.mylibrary.LogUtil
+
 
 class MyService : Service() {
 
@@ -30,11 +29,11 @@ class MyService : Service() {
     class DownloadBinder : Binder() {
 
         fun startDownload() {
-            LogUtil.d("MyService", "start download executed")
+           // LogUtil.d("MyService", "start download executed")
         }
 
         fun getProgress(): Int {
-            LogUtil.d("MyService", "getProgress executed")
+//            LogUtil.d("MyService", "getProgress executed")
 
             return 0
         }
