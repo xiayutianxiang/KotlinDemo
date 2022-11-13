@@ -4,7 +4,8 @@
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,12 +13,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinDemo">
-        <activity android:name="com.example.web.WebViewActivity">
+        <activity android:name="com.example.jetpack.JetActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="com.example.web.WebViewActivity">
+
         </activity>
 
         <service
@@ -25,15 +29,13 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name="com.example.service.ServiceActivity">
-
-        </activity>
+        <activity android:name="com.example.service.ServiceActivity"></activity>
         <activity android:name="com.example.database.CreateDbActivity" />
 
         <receiver
             android:name="com.example.BootCompleteReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true" />
         <receiver
             android:name="com.example.broadcast.MyBroadcastReceiver"
             android:enabled="true"
