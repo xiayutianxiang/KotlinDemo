@@ -1,9 +1,9 @@
 package com.example.jetpack
 
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.edit
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.BaseActivity
 import com.example.kotlindemo.R
@@ -30,6 +30,16 @@ class JetActivity : BaseActivity<ActivityJetBinding>() {
             MainViewModelFactory(counterReserved)
         )[MainViewModel::class.java]
         refreshCounter()
+
+        initObserver()
+    }
+
+    private fun initObserver() {
+        viewModel.counter.observe(this, object : Observer<Int> {
+            override fun onChanged(count: Int?) {
+                binding.infoText.text = count.toString()
+            }
+        })
     }
 
     override fun onStart() {
@@ -39,13 +49,15 @@ class JetActivity : BaseActivity<ActivityJetBinding>() {
 
     override fun initListener() {
         binding.plusOneBtn.setOnClickListener {
-            viewModel.counter++
-            refreshCounter()
+            /*viewModel.counter++
+            refreshCounter()*/
+            viewModel.plusOne()
         }
 
         binding.clearBtn.setOnClickListener {
-            viewModel.counter = 0
-            refreshCounter()
+            /*viewModel.counter = 0
+            refreshCounter()*/
+            viewModel.clear()
         }
     }
 
@@ -60,7 +72,7 @@ class JetActivity : BaseActivity<ActivityJetBinding>() {
     override fun onPause() {
         super.onPause()
         sp.edit {
-            putInt("count_reserved", viewModel.counter)
+            putInt("count_reserved", viewModel.counter.value ?: 0)
         }
     }
 
