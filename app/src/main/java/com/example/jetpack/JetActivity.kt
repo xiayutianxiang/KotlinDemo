@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.BaseActivity
 import com.example.kotlindemo.R
 import com.example.kotlindemo.databinding.ActivityJetBinding
+import kotlin.random.Random
 
 class JetActivity : BaseActivity<ActivityJetBinding>() {
 
@@ -40,6 +41,15 @@ class JetActivity : BaseActivity<ActivityJetBinding>() {
                 binding.infoText.text = count.toString()
             }
         })
+
+        //不可用，每次getUser返回的都是一个新的实例，这么写只会一直观察老的livedata实例
+        /*viewModel.getUser("1").observe(this) { user ->
+
+        }*/
+        // viewModel.getUser("1")
+        viewModel.user.observe(this, { user ->
+            binding.infoText.text = user.firstName
+        })
     }
 
     override fun onStart() {
@@ -58,6 +68,11 @@ class JetActivity : BaseActivity<ActivityJetBinding>() {
             /*viewModel.counter = 0
             refreshCounter()*/
             viewModel.clear()
+        }
+
+        binding.getUserBtn.setOnClickListener {
+            val userId = (0..1000).random().toString()
+            viewModel.getUser(userId)
         }
     }
 
