@@ -21,10 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.jetpack.JetActivity">
-
-        </activity>
-        <activity android:name="com.example.web.WebViewActivity"></activity>
+        <activity android:name="com.example.ui.place.WeatherActivity"/>
+        <activity android:name="com.example.jetpack.JetActivity"></activity>
+        <activity android:name="com.example.web.WebViewActivity" />
 
         <service
             android:name="com.example.service.MyService"
