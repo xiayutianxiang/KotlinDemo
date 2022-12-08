@@ -14,16 +14,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinDemo">
-        <activity android:name="com.example.ui.place.SunnyWeatherActivity">
+        <activity android:name="com.example.DrawPaintActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.ui.place.WeatherActivity"/>
-        <activity android:name="com.example.jetpack.JetActivity"></activity>
-        <activity android:name="com.example.web.WebViewActivity" />
+        <activity android:name="com.example.ui.place.SunnyWeatherActivity"></activity>
+        <activity android:name="com.example.ui.place.WeatherActivity" />
+        <activity android:name="com.example.jetpack.JetActivity" />
+        <activity android:name="com.example.web.WebViewActivity">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
 
         <service
             android:name="com.example.service.MyService"

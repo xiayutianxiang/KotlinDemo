@@ -1,8 +1,5 @@
 package com.example.web
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.webkit.WebViewClient
 import com.example.BaseActivity
 import com.example.kotlindemo.R
 import com.example.kotlindemo.databinding.ActivityWebViewBinding
@@ -55,7 +52,7 @@ class WebViewActivity : BaseActivity<ActivityWebViewBinding>() {
             }
 
             override fun onFailure(call: retrofit2.Call<List<App>>, t: Throwable) {
-                TODO("Not yet implemented")
+
             }
         })
     }
