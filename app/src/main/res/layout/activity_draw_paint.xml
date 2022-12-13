@@ -4,13 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
-    tools:context="com.example.DrawPaintActivity"
-    tools:ignore="MissingDefaultResource">
+    android:orientation="vertical"
+    tools:context="com.example.DrawPaintActivity">
 
     <com.example.customview.DrawAPaintView
-        android:background="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="400dp"
+        android:background="@color/white"
+        android:visibility="gone" />
+
+    <com.example.customview.PieView
+        android:id="@+id/pieView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
 </LinearLayout>
