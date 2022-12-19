@@ -17,5 +17,10 @@
     <com.example.customview.PieView
         android:id="@+id/pieView"
         android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:visibility="gone" />
+
+    <com.example.customview.PaintTestView
+        android:layout_width="match_parent"
         android:layout_height="300dp" />
 </LinearLayout>
