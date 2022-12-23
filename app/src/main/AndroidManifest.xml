@@ -15,13 +15,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinDemo">
         <activity android:name="com.example.DrawPaintActivity">
-            <!--<intent-filter>
+           <!-- <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>-->
         </activity>
-        <activity android:name="com.example.ui.place.SunnyWeatherActivity"></activity>
+        <activity android:name="com.example.ui.place.SunnyWeatherActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name="com.example.ui.place.WeatherActivity" />
         <activity android:name="com.example.jetpack.JetActivity" />
         <activity android:name="com.example.web.WebViewActivity">
@@ -74,11 +81,11 @@
         </activity>
         <activity android:name=".MainActivity">
 
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
     </application>
 

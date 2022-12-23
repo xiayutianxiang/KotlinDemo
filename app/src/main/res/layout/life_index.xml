@@ -38,8 +38,8 @@
 
                     <ImageView
                         android:id="@+id/coldRiskImg"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="20dp"
                         android:src="@drawable/ic_coldrisk" />
@@ -76,8 +76,8 @@
 
                     <ImageView
                         android:id="@+id/dressingImg"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="20dp"
                         android:src="@drawable/ic_dressing" />
@@ -119,8 +119,8 @@
 
                     <ImageView
                         android:id="@+id/ultravioletImg"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="20dp"
                         android:src="@drawable/ic_ultraviolet" />
@@ -156,8 +156,8 @@
 
                     <ImageView
                         android:id="@+id/carWashingImg"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="20dp"
                         android:src="@drawable/ic_carwashing" />

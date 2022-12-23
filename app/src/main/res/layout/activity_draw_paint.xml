@@ -12,13 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:background="@color/white"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
     <com.example.customview.PieView
         android:id="@+id/pieView"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
     <com.example.customview.PaintTestView
         android:layout_width="match_parent"

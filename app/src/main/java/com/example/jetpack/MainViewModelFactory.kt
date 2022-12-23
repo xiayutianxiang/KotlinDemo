@@ -9,8 +9,9 @@ import androidx.lifecycle.ViewModelProvider
     向viewmodel 的构造函数中传递参数的方法
     新建一个类，设置它的参数，然后继承viewmodel.factory即可
  */
+@Suppress("UNCHECKED_CAST")
 class MainViewModelFactory(private val countReserved: Int) : ViewModelProvider.Factory {
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return MainViewModel(countReserved) as T
     }
 }

@@ -42,14 +42,15 @@ class JetActivity : BaseActivity<ActivityJetBinding>() {
             }
         })
 
+
         //不可用，每次getUser返回的都是一个新的实例，这么写只会一直观察老的livedata实例
         /*viewModel.getUser("1").observe(this) { user ->
 
         }*/
         // viewModel.getUser("1")
-        viewModel.user.observe(this, { user ->
+        viewModel.user.observe(this){ user ->
             binding.infoText.text = user.firstName
-        })
+        }
     }
 
     override fun onStart() {

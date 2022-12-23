@@ -1,4 +1,3 @@
-
 package com.example.kotlindemo
 
 import android.content.Intent
@@ -11,10 +10,14 @@ import android.widget.ArrayAdapter
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.work.OneTimeWorkRequest
+import androidx.work.WorkManager
 import com.example.FruitAdapter
 import com.example.data.FruitRvData
 import com.example.data.ListViewData
 import com.example.kotlindemo.databinding.ActivityMainBinding
+import com.example.workmanager.SimpleWorker
+import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,6 +35,22 @@ class MainActivity : AppCompatActivity() {
         }
         initListView()
         initRvView()
+        initListener()
+    }
+
+    private fun initListener() {
+        binding.doWorker.setOnClickListener {
+            //2.配置该后台任务的运行条件和约束信息，并构建后台任务请求
+            val request = OneTimeWorkRequest.Builder(SimpleWorker::class.java)
+                .setInitialDelay(5, TimeUnit.MINUTES)   //在5分钟后执行
+                .addTag("simple")   //添加tag （可以通过此标签来取消后台任务请求，除了标签，也可通过request.id取消）
+                .build()
+
+            //3.将该后台任务请求传给WorkManager的 enqueue中，系统会在合适的时间运行
+            WorkManager.getInstance(this).enqueue(request)
+
+            //WorkManager.getInstance(this).cancelWorkById(request.id)
+        }
     }
 
     private fun initRvView() {

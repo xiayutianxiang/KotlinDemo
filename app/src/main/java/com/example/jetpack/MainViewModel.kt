@@ -13,6 +13,7 @@ class MainViewModel(countReserved: Int) : ViewModel() {
 
     private val userIdLiveData = MutableLiveData<String>()
 
+    
     //使用Transformations.switchMap函数将其转换成可观察的liveData对象
     //一旦userIdLiveData的 数据发生变化，那么观察userIdLiveData的switchMap()方法就会执行
     val user: LiveData<User> = Transformations.switchMap(userIdLiveData) { userId ->

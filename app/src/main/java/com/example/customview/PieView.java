@@ -105,6 +105,9 @@ public class PieView extends View {
     }
 
     private void initData() {
+        if(isInEditMode()){
+            return;
+        }
         if (isPieListsNull()) {
             return;
         }

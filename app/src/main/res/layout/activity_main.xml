@@ -14,20 +14,27 @@
         tools:context=".MainActivity">
 
         <Button
+            android:id="@+id/show_toast"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="button"
-            android:id="@+id/show_toast" />
+            android:text="button" />
 
         <ListView
-            android:visibility="gone"
             android:id="@+id/listView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:visibility="gone" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/do_worker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="do worker" />
     </LinearLayout>
 </layout>

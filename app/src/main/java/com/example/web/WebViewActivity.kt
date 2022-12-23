@@ -13,6 +13,7 @@ import java.lang.Exception
 import java.net.HttpURLConnection
 import java.net.URL
 import kotlin.concurrent.thread
+import kotlin.coroutines.suspendCoroutine
 
 class WebViewActivity : BaseActivity<ActivityWebViewBinding>() {
 
@@ -55,6 +56,22 @@ class WebViewActivity : BaseActivity<ActivityWebViewBinding>() {
 
             }
         })
+    }
+
+    //定义一个await函数
+    suspend fun <T> retrofit2.Call<T>.await(): T {
+        return suspendCoroutine { continuation ->
+            enqueue(object : retrofit2.Callback<T> {
+                override fun onResponse(call: retrofit2.Call<T>, response: retrofit2.Response<T>) {
+                    TODO("Not yet implemented")
+                }
+
+                override fun onFailure(call: retrofit2.Call<T>, t: Throwable) {
+                    TODO("Not yet implemented")
+                }
+
+            })
+        }
     }
 
     private fun sendRequestWithOkhttp() {
